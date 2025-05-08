@@ -19,6 +19,8 @@ export function logLocal({ message, label = 'INFO' }: { message: any, label?: st
 
     const timestamp = new Date().toISOString();
     const logMessage = `[${label}] ${timestamp} - ${JSON.stringify(message)}\n`;
+    console.log(logMessage); // Log to console as well
+    
 
     fs.appendFileSync(logFile, logMessage, 'utf-8');
 }
